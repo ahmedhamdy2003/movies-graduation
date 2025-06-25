@@ -51,7 +51,10 @@ class _SignInState extends State<SignIn> {
                     ),
                     CustomTextButton(
                       title: AppLocalizations.of(context)!.forget_password,
-                      onPress: () {},
+                      onPress: () {
+                        Navigator.pushNamed(
+                            context, RoutesManager.resetPassword);
+                      },
                     ),
                     CustomElevatedButton(
                       title: AppLocalizations.of(context)!.login,

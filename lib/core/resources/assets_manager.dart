@@ -12,6 +12,7 @@ class ImageAssets {
   static const String avatar7 = "$base/avatar7.png";
   static const String avatar8 = "$base/avatar8.png";
   static const String avatar9 = "$base/avatar9.png";
+  static const String resetPassword = "$base/reset_password.png";
 
 }
 

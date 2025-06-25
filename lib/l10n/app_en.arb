@@ -2,6 +2,8 @@
   "email": "Email",
   "password": "Password",
   "forget_password": "Forget Password ?",
+  "reset_password": "Forget Password",
+  "verify_email": "Verify Email",
   "login": "Login",
   "dont_have_account": "Don't Have Account ?",
   "already_have_account": "Already Have Account ?",

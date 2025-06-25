@@ -18,6 +18,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get forget_password => 'Forget Password ?';
 
   @override
+  String get reset_password => 'Forget Password';
+
+  @override
+  String get verify_email => 'Verify Email';
+
+  @override
   String get login => 'Login';
 
   @override
