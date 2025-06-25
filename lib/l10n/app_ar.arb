@@ -1,0 +1,11 @@
+{
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "forget_password": "نسيت كلمة المرور ؟",
+  "login": "تسجيل الدخول",
+  "create_account": "إنشاء حساب",
+  "dont_have_account": "ليس لديك حساب ؟",
+  "or": "أو",
+  "login_with_google": "تسجيل الدخول عبر جوجل"
+
+}
