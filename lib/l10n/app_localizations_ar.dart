@@ -24,11 +24,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dont_have_account => 'ليس لديك حساب ؟';
 
   @override
-  String get create_account => 'إنشاء حساب';
+  String get already_have_account => 'لديك حساب بالفعل ؟';
+
+  @override
+  String get create_one => 'إنشاء حساب';
+
+  @override
+  String get create_account => 'انشاء حساب';
 
   @override
   String get or => 'أو';
 
   @override
   String get login_with_google => 'تسجيل الدخول عبر جوجل';
+
+  @override
+  String get register => 'انشاء حساب';
+
+  @override
+  String get avatar => 'الصورة الشخصية';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get phone => 'رقم التليفون';
+
+  @override
+  String get confirm_password => 'تاكيد كلمة المرور';
 }

@@ -3,9 +3,16 @@
   "password": "كلمة المرور",
   "forget_password": "نسيت كلمة المرور ؟",
   "login": "تسجيل الدخول",
-  "create_account": "إنشاء حساب",
+  "create_one": "إنشاء حساب",
+  "create_account": "انشاء حساب",
   "dont_have_account": "ليس لديك حساب ؟",
+  "already_have_account": "لديك حساب بالفعل ؟",
   "or": "أو",
-  "login_with_google": "تسجيل الدخول عبر جوجل"
+  "login_with_google": "تسجيل الدخول عبر جوجل",
+  "register": "انشاء حساب",
+  "avatar": "الصورة الشخصية",
+  "name": "الاسم",
+  "phone": "رقم التليفون",
+  "confirm_password": "تاكيد كلمة المرور"
 
 }

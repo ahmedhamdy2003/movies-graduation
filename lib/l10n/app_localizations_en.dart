@@ -24,11 +24,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dont_have_account => 'Don\'t Have Account ?';
 
   @override
-  String get create_account => 'Create One';
+  String get already_have_account => 'Already Have Account ?';
+
+  @override
+  String get create_one => 'Create One';
+
+  @override
+  String get create_account => 'Create Account';
 
   @override
   String get or => 'OR';
 
   @override
   String get login_with_google => 'Login With Google';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get avatar => 'Avatar';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
+  String get confirm_password => 'Confirm Password';
 }

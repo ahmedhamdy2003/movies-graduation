@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../presentation/onboarding/onboarding_page_model.dart';
+import 'assets_manager.dart';
 import 'colors_manager.dart';
 
 class ConstantsManager {
@@ -71,5 +72,18 @@ class ConstantsManager {
         end: Alignment.bottomCenter,
       ),
     ),
+  ];
+
+  static List<String> avatarList = [
+    ImageAssets.avatar1,
+    ImageAssets.avatar2,
+    ImageAssets.avatar3,
+    ImageAssets.avatar4,
+    ImageAssets.avatar5,
+    ImageAssets.avatar6,
+    ImageAssets.avatar7,
+    ImageAssets.avatar8,
+    ImageAssets.avatar9,
+
   ];
 }

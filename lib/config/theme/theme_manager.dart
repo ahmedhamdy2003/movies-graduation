@@ -7,7 +7,19 @@ class ThemeManager {
 
   static final ThemeData dark = ThemeData(
       scaffoldBackgroundColor: ColorsManager.black,
-
+      appBarTheme: AppBarTheme(
+        centerTitle: true,
+        color: ColorsManager.black,
+        foregroundColor: ColorsManager.yellow,
+        iconTheme: const IconThemeData(
+          color: ColorsManager.yellow,
+        ),
+        titleTextStyle: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.normal,
+            fontStyle: FontStyle.normal,
+            color: ColorsManager.yellow),
+      ),
       inputDecorationTheme: InputDecorationTheme(
         suffixIconColor: ColorsManager.white,
         prefixIconColor: ColorsManager.white,

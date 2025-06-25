@@ -125,10 +125,22 @@ abstract class AppLocalizations {
   /// **'Don\'t Have Account ?'**
   String get dont_have_account;
 
-  /// No description provided for @create_account.
+  /// No description provided for @already_have_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Already Have Account ?'**
+  String get already_have_account;
+
+  /// No description provided for @create_one.
   ///
   /// In en, this message translates to:
   /// **'Create One'**
+  String get create_one;
+
+  /// No description provided for @create_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
   String get create_account;
 
   /// No description provided for @or.
@@ -142,6 +154,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login With Google'**
   String get login_with_google;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @avatar.
+  ///
+  /// In en, this message translates to:
+  /// **'Avatar'**
+  String get avatar;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phone;
+
+  /// No description provided for @confirm_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirm_password;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
