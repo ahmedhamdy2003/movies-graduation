@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/prefs_manager/prefs_manager.dart';
-import '../../core/resources/colors_manager.dart';
-import '../../core/routes_manager/routes_manager.dart';
+import '../../../../core/prefs_manager/prefs_manager.dart';
+import '../../../../core/resources/colors_manager.dart';
+import '../../../../core/routes_manager/routes_manager.dart';
 import 'onboarding_page_model.dart';
 
 class OnboardingBody extends StatelessWidget {

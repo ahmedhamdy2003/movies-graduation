@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../presentation/onboarding/onboarding_page_model.dart';
+import '../../features/onboarding/presentation/onboarding/onboarding_page_model.dart';
 import 'assets_manager.dart';
 import 'colors_manager.dart';
 

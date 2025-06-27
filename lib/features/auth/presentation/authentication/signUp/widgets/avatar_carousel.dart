@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_movie_app/core/extensions/build_context_extension.dart';
 
-import '../../../../core/resources/colors_manager.dart';
-import '../../../../core/resources/constant_manager.dart';
-import '../../../../l10n/app_localizations.dart';
+import '../../../../../../core/resources/colors_manager.dart';
+import '../../../../../../core/resources/constant_manager.dart';
+import '../../../../../../l10n/app_localizations.dart';
+
 
 class AvatarCarousel extends StatefulWidget {
   const AvatarCarousel({super.key});

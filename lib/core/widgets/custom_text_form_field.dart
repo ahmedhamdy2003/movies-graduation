@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../resources/colors_manager.dart';
+
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
       {super.key,
@@ -27,6 +29,9 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(
+        color: ColorsManager.white,
+      ),
       validator: validator,
       controller: controller,
       maxLines: maxLines,
