@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/resources/constant_manager.dart';
+import '../../../../core/resources/constant_manager.dart';
 import 'onboarding_body.dart';
 
 class OnBoarding extends StatefulWidget {

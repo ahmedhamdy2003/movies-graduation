@@ -2,9 +2,18 @@
   "email": "Email",
   "password": "Password",
   "forget_password": "Forget Password ?",
+  "reset_password": "Forget Password",
+  "verify_email": "Verify Email",
   "login": "Login",
   "dont_have_account": "Don't Have Account ?",
-  "create_account": "Create One",
+  "already_have_account": "Already Have Account ?",
+  "create_one": "Create One",
+  "create_account": "Create Account",
   "or": "OR",
-  "login_with_google": "Login With Google"
+  "login_with_google": "Login With Google",
+  "register": "Register",
+  "avatar": "Avatar",
+  "name": "Name",
+  "phone": "Phone",
+  "confirm_password": "Confirm Password"
 }

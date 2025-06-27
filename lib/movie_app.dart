@@ -26,8 +26,7 @@ class MoviesApp extends StatelessWidget {
         theme: ThemeManager.dark,
         darkTheme: ThemeManager.dark,
         onGenerateRoute: RoutesManager.router,
-        initialRoute:
-        seenOnboarding
+       initialRoute:  seenOnboarding
             ? RoutesManager.signIn
             : RoutesManager.onBoarding,
         locale: Locale(languageProvider.currentLang),

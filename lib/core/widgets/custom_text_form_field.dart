@@ -3,34 +3,47 @@ import 'package:flutter/material.dart';
 import '../resources/colors_manager.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    super.key,
-    required this.label,
-    required this.prefixIcon,
-    this.suffixIcon,
-    this.isSecure = false,
-    this.onPress,
-  });
+  CustomTextFormField(
+      {super.key,
+        this.label,
+        this.maxLines = 1,
+        this.prefixIcon,
+        this.suffixIcon,
+        this.controller,
+        this.isSecure = false,
+        this.onPress,
+        this.hint,
+        this.keyboardType = TextInputType.text,
+        this.validator});
 
-  final String label;
-  final IconData prefixIcon;
+  final String? label;
+  final String? hint;
+  final IconData? prefixIcon;
   final IconData? suffixIcon;
   final bool isSecure;
   final VoidCallback? onPress;
-
+  final TextInputType keyboardType;
+  final int? maxLines;
+  final TextEditingController? controller;
+  String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: TextStyle(color: ColorsManager.white),
+      style: TextStyle(
+        color: ColorsManager.white,
+      ),
+      validator: validator,
+      controller: controller,
+      maxLines: maxLines,
+      keyboardType: keyboardType!,
       obscureText: isSecure,
       decoration: InputDecoration(
-        labelText: label,
-        prefixIcon: Icon(prefixIcon),
-        suffixIcon:
-            suffixIcon != null
-                ? IconButton(onPressed: onPress, icon: Icon(suffixIcon))
-                : null,
-      ),
+          hintText: hint,
+          labelText: label,
+          prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+          suffixIcon: suffixIcon != null
+              ? IconButton(onPressed: onPress, icon: Icon(suffixIcon))
+              : null),
     );
   }
 }
