@@ -7,6 +7,19 @@ class ThemeManager {
 
   static final ThemeData dark = ThemeData(
       scaffoldBackgroundColor: ColorsManager.black,
+
+
+
+      bottomNavigationBarTheme:BottomNavigationBarThemeData(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: ColorsManager.darkGrey,
+        selectedItemColor: ColorsManager.white,
+        unselectedItemColor: ColorsManager.white,
+      ) ,
+
+
+
+
       appBarTheme: AppBarTheme(
         centerTitle: true,
         color: ColorsManager.black,
