@@ -30,12 +30,12 @@ class _HomeState extends State<Home> {
       extendBody: true, // علشان الـ BottomNavBar يبان فوق الخلفية
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              ImageAssets.backGround,
-              fit: BoxFit.cover,
-            ),
-          ),
+          // Positioned.fill(
+          //   child: Image.asset(
+          //     // ImageAssets.backGround,
+          //     // fit: BoxFit.cover,
+          //   ),
+          // ),
           tabs[selectedIndex],
         ],
       ),

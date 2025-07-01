@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
+  final VoidCallback onPress;
+  final String title;
+  final Color? textColor;
+
   const CustomTextButton({
     super.key,
-    required this.title,
     required this.onPress,
-    this.alignment = Alignment.centerRight,
+    required this.title,
+    this.textColor,
   });
-
-  final String title;
-  final VoidCallback onPress;
-  final Alignment alignment;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(alignment: alignment),
       onPressed: onPress,
-      child: Text(title),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: textColor ?? Colors.black, // لون افتراضي لو مش اتبعت حاجة
+        ),
+      ),
     );
   }
 }
