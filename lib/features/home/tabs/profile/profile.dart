@@ -1026,6 +1026,8 @@ import 'package:flutter/material.dart';
 import 'package:my_movie_app/core/resources/assets_manager.dart';
 import 'package:my_movie_app/core/resources/colors_manager.dart';
 
+import '../../profile_update/profile_update.dart';
+
 class Profile extends StatefulWidget {
   const Profile({super.key});
 
@@ -1129,7 +1131,12 @@ class _ProfileState extends State<Profile> {
                     Expanded(
                       flex: 2,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ProfileUpdate()),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: ColorsManager.yellow,
                           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -1157,15 +1164,23 @@ class _ProfileState extends State<Profile> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: const Text(
-                          "Exit",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Exit",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Icon(Icons.logout, color: ColorsManager.white),
+                          ],
                         ),
                       ),
                     ),
+
                   ],
                 ),
               ),
