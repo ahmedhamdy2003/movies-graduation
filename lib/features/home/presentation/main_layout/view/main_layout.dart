@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_movie_app/core/resources/assets_manager.dart';
 import 'package:my_movie_app/core/resources/colors_manager.dart';
-import 'package:my_movie_app/features/home/tabs/explore/explore.dart';
-import 'package:my_movie_app/features/home/tabs/home/home_tab.dart';
-import 'package:my_movie_app/features/home/tabs/profile/profile.dart';
-import '../tabs/search/search.dart';
+import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/explore/explore.dart';
+import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/home/home_tab.dart';
+import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/profile/profile.dart';
+import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/search/search.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class MainLayOut extends StatefulWidget {
+  const MainLayOut({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<MainLayOut> createState() => _MainLayOutState();
 }
 
-class _HomeState extends State<Home> {
+class _MainLayOutState extends State<MainLayOut> {
   int selectedIndex = 0;
 
-  List<Widget> tabs = const [
-    HomeTab(),
+  List<Widget> tabs = [
+    const HomeTab(),
     Search(),
     Explore(),
     Profile(),
@@ -27,15 +28,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true, // علشان الـ BottomNavBar يبان فوق الخلفية
+      extendBody: true,
       body: Stack(
         children: [
-          // Positioned.fill(
-          //   child: Image.asset(
-          //     // ImageAssets.backGround,
-          //     // fit: BoxFit.cover,
-          //   ),
-          // ),
           tabs[selectedIndex],
         ],
       ),
@@ -45,9 +40,9 @@ class _HomeState extends State<Home> {
 
   Widget buildBottomNavBar() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: REdgeInsets.all(8.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(14.r),
         child: Theme(
           data: Theme.of(context).copyWith(
             splashColor: Colors.transparent,
@@ -56,13 +51,13 @@ class _HomeState extends State<Home> {
           child: BottomNavigationBar(
             showSelectedLabels: false,
             showUnselectedLabels: false,
-            backgroundColor: ColorsManager.darkGrey, // لون خلفية البار
+            backgroundColor: ColorsManager.darkGrey,
             elevation: 0,
             currentIndex: selectedIndex,
             onTap: _onBottomNavBarItemClicked,
             type: BottomNavigationBarType.fixed,
             selectedItemColor: ColorsManager.yellow,
-            unselectedItemColor: Colors.white,
+            unselectedItemColor: ColorsManager.white,
             items: [
               BottomNavigationBarItem(
                 activeIcon: SvgPicture.asset(SvgAssets.selectedHomeIcon),
