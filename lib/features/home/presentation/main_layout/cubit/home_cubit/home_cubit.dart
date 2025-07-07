@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../core/common/error_handling.dart';
-import '../../../domain/use_case/get_movies_usecase.dart';
-import '../../../domain/use_case/get_suggestion_use_case.dart';
+import '../../../../../../core/common/error_handling.dart';
+import '../../../../domain/use_case/get_movies_usecase.dart';
+import '../../../../domain/use_case/get_suggestion_use_case.dart';
 import 'home_state.dart';
 
 @injectable

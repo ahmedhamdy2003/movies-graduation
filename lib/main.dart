@@ -6,7 +6,8 @@ import 'package:provider/provider.dart';
 import 'core/prefs_manager/prefs_manager.dart';
 import 'core/resources/get_it/get_it.dart';
 import 'features/auth/presentation/cubit/auth_cubit.dart';
-import 'features/home/presentation/main_layout/cubit/home_cubit.dart';
+import 'features/home/presentation/main_layout/cubit/home_cubit/home_cubit.dart';
+import 'features/home/presentation/main_layout/cubit/search_cubit/search_cubit.dart';
 import 'movie_app.dart';
 
 void main() async {
@@ -21,6 +22,7 @@ void main() async {
             create: (_) => getIt<AuthCubit>(),
         ),
         BlocProvider<HomeCubit>(create: (_) => getIt<HomeCubit>()),
+        BlocProvider<SearchCubit>(create: (_) => getIt<SearchCubit>()),
       ],
       child: ChangeNotifierProvider(
         create: (context) => ChangeLanguageProvider(),

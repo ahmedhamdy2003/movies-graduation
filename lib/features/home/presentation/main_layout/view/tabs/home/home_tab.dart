@@ -8,8 +8,8 @@ import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/ho
 import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/home/widgets/build_suggestion.dart';
 
 import '../../../../../../../core/resources/assets_manager.dart';
-import '../../../cubit/home_cubit.dart';
-import '../../../cubit/home_state.dart';
+import '../../../cubit/home_cubit/home_cubit.dart';
+import '../../../cubit/home_cubit/home_state.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
