@@ -3,7 +3,7 @@ class ImageAssets {
   static const String logo = "$base/logo.png";
   static const String LR = "$base/LR.png";
   static const String EG = "$base/EG.png";
-  static const String search = "$base/search_empty.png";
+
 
   static const String film1 = "$base/film1.png";
   static const String film2 = "$base/film2.png";
