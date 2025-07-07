@@ -4,4 +4,6 @@ abstract class MovieRepository {
   Future<List<MovieEntity>> getMovies();
 
   Future<List<MovieEntity>> getSuggestions();
+
+  Future<List<MovieEntity>> searchMovies(String query);
 }

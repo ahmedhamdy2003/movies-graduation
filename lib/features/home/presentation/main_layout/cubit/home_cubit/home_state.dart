@@ -1,6 +1,6 @@
 import 'package:my_movie_app/features/home/domain/entity/movie_entity.dart';
 
-import '../../../../../core/common/error_handling.dart';
+import '../../../../../../core/common/error_handling.dart';
 
 abstract class HomeState {}
 
