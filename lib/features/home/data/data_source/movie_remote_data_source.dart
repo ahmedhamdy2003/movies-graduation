@@ -6,9 +6,11 @@ import '../model/movie_model.dart';
 abstract class MoviesRemoteDataSource {
   Future<List<MovieModel>> getMovies();
 
-  Future<List<MovieModel>> getSuggestions();
+  Future<List<MovieModel>> getSuggestions(int id);
 
   Future<List<MovieModel>> searchMovies(String query);
+
+  Future<MovieModel> getMovieDetails(int id);
 }
 
 @LazySingleton(as: MoviesRemoteDataSource)
@@ -25,9 +27,10 @@ class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
   }
 
   @override
-  Future<List<MovieModel>> getSuggestions() async {
+  Future<List<MovieModel>> getSuggestions(int id) async {
     final response = await dio.get(
       'https://yts.mx/api/v2/movie_suggestions.json?movie_id=10',
+      queryParameters: {'movie_id': id},
     );
     final List data = response.data['data']['movies'];
     return data.map((json) => MovieModel.fromJson(json)).toList();
@@ -42,5 +45,20 @@ class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
 
     final List movies = response.data['data']['movies'] ?? [];
     return movies.map((json) => MovieModel.fromJson(json)).toList();
+  }
+
+  @override
+  Future<MovieModel> getMovieDetails(int id) async {
+    final response = await dio.get(
+      'https://yts.mx/api/v2/movie_details.json',
+      queryParameters: {
+        'movie_id': id,
+        'with_images': true,
+        'with_cast': false,
+      },
+    );
+
+    final data = response.data['data']['movie'];
+    return MovieModel.fromJson(data);
   }
 }

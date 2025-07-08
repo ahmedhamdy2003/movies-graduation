@@ -3,7 +3,10 @@ class ImageAssets {
   static const String logo = "$base/logo.png";
   static const String LR = "$base/LR.png";
   static const String EG = "$base/EG.png";
-
+  static const String search = "$base/search_empty.png";
+  static const String screenShot1 = "$base/screen_shot_1.png";
+  static const String screenShot2 = "$base/screen_shot_2.png";
+  static const String screenShot3 = "$base/screen_shot_3.png";
 
   static const String film1 = "$base/film1.png";
   static const String film2 = "$base/film2.png";
@@ -42,4 +45,5 @@ class SvgAssets {
   static const String selectedExploreIcon = "$base/selected_explore_icon.svg";
   static const String selectedSearchIcon = "$base/selected_search_icon.svg";
   static const String selectedProfileIcon = "$base/selected_profile_icon.svg";
+  static const String moviePlayIcon = "$base/movie_play_icon.svg";
 }

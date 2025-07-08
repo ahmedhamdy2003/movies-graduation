@@ -9,7 +9,7 @@ class GetSuggestionsUseCase {
 
   GetSuggestionsUseCase(this._repository);
 
-  Future<List<MovieEntity>> call() async {
-    return await _repository.getSuggestions();
+  Future<List<MovieEntity>> call(int id) async {
+    return await _repository.getSuggestions(id);
   }
 }
