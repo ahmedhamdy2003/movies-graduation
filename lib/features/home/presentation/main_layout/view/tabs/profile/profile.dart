@@ -30,7 +30,7 @@ class _ProfileState extends State<Profile> {
     }
   }
 
-  @@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsManager.darkGrey,
