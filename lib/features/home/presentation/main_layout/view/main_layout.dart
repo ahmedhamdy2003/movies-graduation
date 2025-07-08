@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_movie_app/core/resources/assets_manager.dart';
 import 'package:my_movie_app/core/resources/colors_manager.dart';
-import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/explore/explore.dart';
+import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/browse/browse.dart';
 import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/home/home_tab.dart';
 import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/profile/profile.dart';
 import 'package:my_movie_app/features/home/presentation/main_layout/view/tabs/search/search.dart';
@@ -21,7 +21,7 @@ class _MainLayOutState extends State<MainLayOut> {
   List<Widget> tabs = [
     const HomeTab(),
     Search(),
-    Explore(),
+    Browse(),
     Profile(),
   ];
 
