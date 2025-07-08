@@ -18,7 +18,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(HomeLoading());
     try {
       final movies = await getMoviesUseCase();
-      final suggestions = await getSuggestionsUseCase();
+      final suggestions = await getSuggestionsUseCase(movies[0].id);
       emit(HomeSuccess(movies: movies, suggestions: suggestions));
     } catch (e) {
       emit(HomeFailure(Failure.handleError(e)));

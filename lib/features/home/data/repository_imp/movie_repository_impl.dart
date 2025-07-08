@@ -17,8 +17,8 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<List<MovieEntity>> getSuggestions() async {
-    final movieModels = await remoteDataSource.getSuggestions();
+  Future<List<MovieEntity>> getSuggestions(int id) async {
+    final movieModels = await remoteDataSource.getSuggestions(id);
     return movieModels.map((e) => e.toEntity()).toList();
   }
 
@@ -26,5 +26,11 @@ class MovieRepositoryImpl implements MovieRepository {
   Future<List<MovieEntity>> searchMovies(String query) async {
     final movieModels = await remoteDataSource.searchMovies(query);
     return movieModels.map((e) => e.toEntity()).toList();
+  }
+
+  @override
+  Future<MovieEntity> getMovieDetails(int id) async {
+    final movieModel = await remoteDataSource.getMovieDetails(id);
+    return movieModel.toEntity();
   }
 }

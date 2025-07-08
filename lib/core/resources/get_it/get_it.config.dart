@@ -30,11 +30,14 @@ import '../../../features/home/data/repository_imp/movie_repository_impl.dart'
     as _i257;
 import '../../../features/home/domain/repository/movie_repository.dart'
     as _i772;
+import '../../../features/home/domain/use_case/details_usecase.dart' as _i336;
 import '../../../features/home/domain/use_case/get_movies_usecase.dart'
     as _i903;
 import '../../../features/home/domain/use_case/get_suggestion_use_case.dart'
     as _i692;
 import '../../../features/home/domain/use_case/search_usecase.dart' as _i991;
+import '../../../features/home/presentation/main_layout/cubit/details_cubit/details_cubit.dart'
+    as _i28;
 import '../../../features/home/presentation/main_layout/cubit/home_cubit/home_cubit.dart'
     as _i522;
 import '../../../features/home/presentation/main_layout/cubit/search_cubit/search_cubit.dart'
@@ -66,6 +69,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i991.SearchUseCase>(
       () => _i991.SearchUseCase(gh<_i772.MovieRepository>()),
     );
+    gh.factory<_i336.DetailsUseCase>(
+      () => _i336.DetailsUseCase(gh<_i772.MovieRepository>()),
+    );
     gh.lazySingleton<_i903.GetMoviesUseCase>(
       () => _i903.GetMoviesUseCase(gh<_i772.MovieRepository>()),
     );
@@ -88,6 +94,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i206.SearchCubit>(
       () => _i206.SearchCubit(gh<_i991.SearchUseCase>()),
+    );
+    gh.factory<_i28.MovieDetailsCubit>(
+      () => _i28.MovieDetailsCubit(
+        gh<_i336.DetailsUseCase>(),
+        gh<_i692.GetSuggestionsUseCase>(),
+      ),
     );
     gh.singleton<_i1066.AuthCubit>(
       () => _i1066.AuthCubit(

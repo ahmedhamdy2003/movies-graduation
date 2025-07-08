@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_movie_app/core/resources/assets_manager.dart';
 import 'package:my_movie_app/core/resources/colors_manager.dart';
 
+import '../../../../../profile_update/profile_update.dart';
+
 class Profile extends StatefulWidget {
   const Profile({super.key});
 
@@ -10,7 +12,23 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  String _currentView = 'watch';
+  String _currentView = 'watch'; // 'watch' or 'history'
+  String currentName = "John Safwat";
+  String currentAvatar = ImageAssets.avatar1;
+
+  void _navigateToUpdateProfile() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ProfileUpdate()),
+    );
+
+    if (result != null && result is Map<String, dynamic>) {
+      setState(() {
+        currentName = result['name'] ?? currentName;
+        currentAvatar = result['avatar'] ?? currentAvatar;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +50,11 @@ class _ProfileState extends State<Profile> {
                       children: [
                         CircleAvatar(
                           radius: 40,
-                          backgroundImage: AssetImage(ImageAssets.avatar1),
+                          backgroundImage: AssetImage(currentAvatar),
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          "John Safwat",
+                          currentName,
                           style: TextStyle(
                             color: ColorsManager.white,
                             fontWeight: FontWeight.bold,
@@ -105,7 +123,7 @@ class _ProfileState extends State<Profile> {
                     Expanded(
                       flex: 2,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: _navigateToUpdateProfile,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: ColorsManager.yellow,
                           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -116,8 +134,8 @@ class _ProfileState extends State<Profile> {
                         child: const Text(
                           "Edit Profile",
                           style: TextStyle(
-                            color: ColorsManager.black,
-                            fontSize: 16,
+                              color: ColorsManager.black,
+                              fontSize: 16
                           ),
                         ),
                       ),
@@ -133,12 +151,23 @@ class _ProfileState extends State<Profile> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: const Text(
-                          "Exit",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Exit",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Icon(Icons.logout, color: ColorsManager.white),
+                          ],
                         ),
                       ),
                     ),
+
                   ],
                 ),
               ),
@@ -158,20 +187,18 @@ class _ProfileState extends State<Profile> {
                         Icon(
                           Icons.playlist_add_outlined,
                           size: 40,
-                          color:
-                              _currentView == 'watch'
-                                  ? ColorsManager.yellow
-                                  : ColorsManager.white,
+                          color: _currentView == 'watch'
+                              ? ColorsManager.yellow
+                              : ColorsManager.white,
                         ),
                         const SizedBox(height: 7),
                         Text(
                           "Watch",
                           style: TextStyle(
-                            color:
-                                _currentView == 'watch'
-                                    ? ColorsManager.yellow
-                                    : ColorsManager.white,
-                            fontSize: 16,
+                              color: _currentView == 'watch'
+                                  ? ColorsManager.yellow
+                                  : ColorsManager.white,
+                              fontSize: 16
                           ),
                         ),
                       ],
@@ -188,20 +215,18 @@ class _ProfileState extends State<Profile> {
                         Icon(
                           Icons.history,
                           size: 40,
-                          color:
-                              _currentView == 'history'
-                                  ? ColorsManager.yellow
-                                  : ColorsManager.white,
+                          color: _currentView == 'history'
+                              ? ColorsManager.yellow
+                              : ColorsManager.white,
                         ),
                         const SizedBox(height: 7),
                         Text(
                           "History",
                           style: TextStyle(
-                            color:
-                                _currentView == 'history'
-                                    ? ColorsManager.yellow
-                                    : ColorsManager.white,
-                            fontSize: 16,
+                              color: _currentView == 'history'
+                                  ? ColorsManager.yellow
+                                  : ColorsManager.white,
+                              fontSize: 16
                           ),
                         ),
                       ],
@@ -210,11 +235,16 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
               const SizedBox(height: 20),
+              // Movies Grid Section
               Container(
                 color: ColorsManager.black,
                 padding: const EdgeInsets.all(16),
                 child: Column(
-                  children: [const SizedBox(height: 16), _buildMovieGrid()],
+                  children: [
+
+                    const SizedBox(height: 16),
+                    _buildMovieGrid(),
+                  ],
                 ),
               ),
             ],
@@ -225,10 +255,7 @@ class _ProfileState extends State<Profile> {
   }
 
   Widget _buildMovieGrid() {
-    List<String> movieImages = List.filled(
-      12,
-      ImageAssets.film1,
-    ); // 12 example movies
+    List<String> movieImages = List.filled(12, ImageAssets.film1);
 
     return GridView.builder(
       shrinkWrap: true,
@@ -243,7 +270,10 @@ class _ProfileState extends State<Profile> {
       itemBuilder: (context, index) {
         return ClipRRect(
           borderRadius: BorderRadius.circular(12),
-          child: Image.asset(movieImages[index], fit: BoxFit.cover),
+          child: Image.asset(
+            movieImages[index],
+            fit: BoxFit.cover,
+          ),
         );
       },
     );

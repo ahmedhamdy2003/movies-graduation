@@ -4,6 +4,8 @@ import 'package:my_movie_app/core/resources/assets_manager.dart';
 import 'package:my_movie_app/core/resources/colors_manager.dart';
 import 'package:my_movie_app/features/home/domain/entity/movie_entity.dart';
 
+import '../../../../../movie_details_screen/movie_details_screen.dart';
+
 class BuildMovies extends StatelessWidget {
   final MovieEntity movie;
 
@@ -12,7 +14,17 @@ class BuildMovies extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                MovieDetailsScreen(movieId: movie.id,
+
+                ),
+          ),
+        );
+      },
       child: Container(
         margin: REdgeInsets.symmetric(horizontal: 16.0),
         child: ClipRRect(
