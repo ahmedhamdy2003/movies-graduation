@@ -25,28 +25,25 @@ class _BrowseState extends State<Browse> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text("Browse"),
-        backgroundColor: Colors.black54,
-        foregroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 16),
-          _buildCategoriesBar(),
-          const SizedBox(height: 20),
-          // Placeholder بدل عرض أفلام حقيقية
-          Expanded(
-            child: Center(
-              child: Text(
-                'Selected: $selectedCategory',
-                style: const TextStyle(color: Colors.white, fontSize: 20),
+     
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 16),
+            _buildCategoriesBar(),
+            const SizedBox(height: 20),
+            // Placeholder بدل عرض أفلام حقيقية
+            Expanded(
+              child: Center(
+                child: Text(
+                  'Selected: $selectedCategory',
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
