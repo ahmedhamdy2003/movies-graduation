@@ -36,12 +36,15 @@ import '../../../features/home/domain/use_case/get_movies_usecase.dart'
 import '../../../features/home/domain/use_case/get_suggestion_use_case.dart'
     as _i692;
 import '../../../features/home/domain/use_case/search_usecase.dart' as _i991;
+import '../../../features/home/presentation/main_layout/cubit/browse_cubit/browse_cubit.dart'
+    as _i400;
 import '../../../features/home/presentation/main_layout/cubit/details_cubit/details_cubit.dart'
     as _i28;
 import '../../../features/home/presentation/main_layout/cubit/home_cubit/home_cubit.dart'
     as _i522;
 import '../../../features/home/presentation/main_layout/cubit/search_cubit/search_cubit.dart'
     as _i206;
+import '../../api_service/api_service.dart' as _i343;
 import 'register_module.dart' as _i291;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -56,6 +59,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i276.MoviesRemoteDataSource>(
       () => _i276.MoviesRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i343.ApiService>(() => _i343.ApiService(gh<_i361.Dio>()));
     gh.factory<_i606.AuthDataSource>(() => _i635.ApiDataSourceImp());
     gh.lazySingleton<_i772.MovieRepository>(
       () => _i257.MovieRepositoryImpl(gh<_i276.MoviesRemoteDataSource>()),
@@ -63,14 +67,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i692.GetSuggestionsUseCase>(
       () => _i692.GetSuggestionsUseCase(gh<_i772.MovieRepository>()),
     );
+    gh.factory<_i400.BrowseCubit>(
+      () => _i400.BrowseCubit(gh<_i343.ApiService>()),
+    );
     gh.factory<_i754.AuthRepository>(
       () => _i745.AuthRepositoryImp(authDataSource: gh<_i606.AuthDataSource>()),
     );
-    gh.factory<_i991.SearchUseCase>(
-      () => _i991.SearchUseCase(gh<_i772.MovieRepository>()),
-    );
     gh.factory<_i336.DetailsUseCase>(
       () => _i336.DetailsUseCase(gh<_i772.MovieRepository>()),
+    );
+    gh.factory<_i991.SearchUseCase>(
+      () => _i991.SearchUseCase(gh<_i772.MovieRepository>()),
     );
     gh.lazySingleton<_i903.GetMoviesUseCase>(
       () => _i903.GetMoviesUseCase(gh<_i772.MovieRepository>()),
