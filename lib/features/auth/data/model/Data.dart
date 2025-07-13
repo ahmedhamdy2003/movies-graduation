@@ -8,7 +8,7 @@ class Data extends UserEntity {
     super.name,
     super.phone,
     this.avaterId,
-    this.id,
+    this.confirmPassword,
     this.createdAt,
     this.updatedAt,
     this.v,
@@ -20,7 +20,7 @@ class Data extends UserEntity {
     name = json['name'];
     phone = json['phone'];
     avaterId = json['avaterId'];
-    id = json['_id'];
+    confirmPassword = json['confirmPassword'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     v = json['__v'];
@@ -30,7 +30,7 @@ class Data extends UserEntity {
   String? name;
   String? phone;
   int? avaterId;
-  String? id;
+  String? confirmPassword;
   String? createdAt;
   String? updatedAt;
   int? v;
@@ -42,7 +42,7 @@ class Data extends UserEntity {
     map['name'] = name;
     map['phone'] = phone;
     map['avaterId'] = avaterId;
-    map['_id'] = id;
+    map['confirmPassword'] = confirmPassword;
     map['createdAt'] = createdAt;
     map['updatedAt'] = updatedAt;
     map['__v'] = v;

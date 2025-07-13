@@ -8,4 +8,10 @@ abstract class MovieRepository {
   Future<List<MovieEntity>> searchMovies(String query);
 
   Future<MovieEntity> getMovieDetails(int id);
+
+  Future<List<MovieEntity>> getWatchList();
+
+  Future<void> saveToHistory(MovieEntity movie);
+
+  Future<List<MovieEntity>> getHistory();
 }

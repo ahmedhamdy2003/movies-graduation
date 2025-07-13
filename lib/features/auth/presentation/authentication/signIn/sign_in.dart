@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_movie_app/core/resources/colors_manager.dart';
 
 import '../../../../../core/resources/assets_manager.dart';
 import '../../../../../core/routes_manager/routes_manager.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_divider.dart';
-import '../../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../../core/widgets/custom_localization.dart';
 import '../../../../../core/widgets/custom_text_button.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
@@ -101,7 +101,7 @@ class _SignInState extends State<SignIn> {
                 Expanded(
                   flex: 4,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(height: 24.h),
                       CustomTextFormField(
@@ -120,15 +120,16 @@ class _SignInState extends State<SignIn> {
                         onPress: _onClick,
                       ),
                       CustomTextButton(
+                        textColor: ColorsManager.yellow,
                         title: AppLocalizations.of(context)!.forget_password,
                         onPress: () {
                           Navigator.pushNamed(
                               context, RoutesManager.resetPassword);
                         },
                       ),
-                      CustomElevatedButton(
+                      CustomButton(
+                        onTap: _onLoginPressed,
                         title: AppLocalizations.of(context)!.login,
-                        onPress: _onLoginPressed,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -136,8 +137,9 @@ class _SignInState extends State<SignIn> {
                           Text(
                             AppLocalizations.of(context)!.dont_have_account,
                             style: Theme.of(context).textTheme.bodySmall,
-                          ),
+                          ), SizedBox(width: 8.w),
                           CustomTextButton(
+                            textColor: ColorsManager.yellow,
                             title: AppLocalizations.of(context)!.create_one,
                             onPress: () {
                               Navigator.pushReplacementNamed(
@@ -149,6 +151,7 @@ class _SignInState extends State<SignIn> {
                       CustomDivider(title: AppLocalizations.of(context)!.or),
                       SizedBox(height: 24.h),
                       CustomButton(
+                        image: SvgAssets.googleIcon,
                         title:
                         AppLocalizations.of(context)!.login_with_google,
                         onTap: () {

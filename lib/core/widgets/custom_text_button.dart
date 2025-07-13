@@ -19,7 +19,7 @@ class CustomTextButton extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-          color: textColor ?? Colors.black, // لون افتراضي لو مش اتبعت حاجة
+          color: textColor ?? Colors.black,
         ),
       ),
     );

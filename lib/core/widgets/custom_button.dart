@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../resources/assets_manager.dart';
 import '../resources/colors_manager.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.title, required this.onTap});
+  const CustomButton(
+      {super.key, required this.title, required this.onTap, this.image});
 
   final String title;
   final VoidCallback onTap;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class CustomButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(SvgAssets.googleIcon),
+            SvgPicture.asset(image ?? ""),
             SizedBox(width: 10.w),
             Text(
               title,

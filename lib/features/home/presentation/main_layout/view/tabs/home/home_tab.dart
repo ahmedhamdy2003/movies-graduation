@@ -32,7 +32,9 @@ class _HomeTabState extends State<HomeTab> {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         if (state is HomeLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+            child: CircularProgressIndicator(color: ColorsManager.yellow),
+          );
         } else if (state is HomeSuccess) {
           return Stack(
             children: [

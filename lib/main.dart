@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_movie_app/features/home/presentation/main_layout/cubit/profile_cubit/profile_cubit.dart';
 import 'package:provider/provider.dart';
-import 'package:dio/dio.dart';
 
-import 'movie_app.dart';
 import 'core/prefs_manager/prefs_manager.dart';
-import 'provider/change_language_provider.dart';
 import 'core/resources/get_it/get_it.dart';
 import 'features/auth/presentation/cubit/auth_cubit.dart';
 import 'features/home/presentation/main_layout/cubit/browse_cubit/browse_cubit.dart';
 import 'features/home/presentation/main_layout/cubit/home_cubit/home_cubit.dart';
 import 'features/home/presentation/main_layout/cubit/search_cubit/search_cubit.dart';
+import 'movie_app.dart';
+import 'provider/change_language_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +35,8 @@ void main() async {
         ),
         BlocProvider<SearchCubit>(
           create: (_) => getIt<SearchCubit>(),
+        ), BlocProvider<ProfileCubit>(
+          create: (_) => getIt<ProfileCubit>(),
         ),
       ],
       child: ChangeNotifierProvider(

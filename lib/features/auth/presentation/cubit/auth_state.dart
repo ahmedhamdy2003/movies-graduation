@@ -1,17 +1,36 @@
+// abstract class AuthState {}
+// class AuthInitial extends AuthState {}
+// class AuthLoading extends AuthState {}
+// class AuthSuccess extends AuthState {}
+// class AuthFailure extends AuthState {
+//   final Failure failure;
+//   AuthFailure(this.failure);
+// }
 
-import 'package:my_movie_app/core/common/error_handling.dart';
-
+// auth_state.dart
+import '../../../../core/common/error_handling.dart';
 import '../../domain/entity/user_entity.dart';
 
 abstract class AuthState {}
 
-final class AuthInitial extends AuthState {}
-final class AuthLoading extends AuthState {}
-final class AuthSuccess extends AuthState {
-  UserEntity userEntity;
-  AuthSuccess({required this.userEntity});
+class AuthInitial extends AuthState {}
+
+class AuthLoading extends AuthState {}
+
+class AuthSuccess extends AuthState {
+  final UserEntity user;
+
+  AuthSuccess(this.user);
 }
-final class AuthFailure extends AuthState {
-  Failure failure;
-  AuthFailure({required this.failure});
+
+class AuthFailure extends AuthState {
+  final Failure failure;
+
+  AuthFailure(this.failure);
+}
+
+class AuthForgotPasswordSuccess extends AuthState {
+  final String message;
+
+  AuthForgotPasswordSuccess(this.message);
 }

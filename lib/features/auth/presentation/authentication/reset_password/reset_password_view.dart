@@ -77,7 +77,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                     onPress: () {
                       final email = _emailController.text.trim();
                       if (email.isNotEmpty) {
-                        context.read<AuthCubit>().forgetPassword(email);
+                        context.read<AuthCubit>().forgotPassword(email);
                       }
                     },
                   ),

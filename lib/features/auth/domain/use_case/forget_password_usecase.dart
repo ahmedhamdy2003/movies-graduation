@@ -4,14 +4,14 @@ import 'package:injectable/injectable.dart';
 import '../../../../core/common/error_handling.dart';
 import '../repository/auth_repository.dart';
 
-@injectable
-class ForgetPasswordUseCase {
- final AuthRepository _authRepository;
+@Injectable()
+class ForgotPasswordUseCase {
+  final AuthRepository repository;
 
- ForgetPasswordUseCase({required AuthRepository authRepository})
-     : _authRepository = authRepository;
+  ForgotPasswordUseCase(this.repository);
 
  Future<Either<Failure, String>> call(String email) {
-  return _authRepository.forgetPassword(email);
- }
+    return repository.forgetPassword(email);
+  }
 }
+

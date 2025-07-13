@@ -47,6 +47,22 @@ class MovieModel {
     );
   }
 
+  factory MovieModel.fromMinimalJson(Map<String, dynamic> json) {
+    return MovieModel(
+      id: json['id'],
+      title: json['title'],
+      poster: json['poster'],
+      rating: (json['rating'] as num).toDouble(),
+      runtime: null,
+      likeCount: null,
+      year: null,
+      genres: [],
+      description: null,
+      backgroundImage: null,
+      screenshots: [],
+    );
+  }
+
   MovieEntity toEntity() {
     return MovieEntity(
         id: id,

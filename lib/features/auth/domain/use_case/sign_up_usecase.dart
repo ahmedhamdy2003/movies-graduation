@@ -16,12 +16,16 @@ class SignUpUseCase {
     required String email,
     required String password,
     required String phoneNumber,
+    required int avatarId,
+    required String confirmPassword
   }) async{
    return await _authRepository.signUp(
       name: name,
       email: email,
       password: password,
-      phoneNumber: phoneNumber,
+     phoneNumber: phoneNumber,
+     avatarId: avatarId,
+     confirmPassword: confirmPassword,
     );
   }
 }

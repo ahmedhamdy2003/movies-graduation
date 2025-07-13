@@ -1,13 +1,17 @@
 class UserEntity {
-  String? name;
-  String? email;
-  String? phone;
-  String? password;
+  final String? name;
+  final String? email;
+  final String? phone;
+  final String? password;
+  final String? confirmPassword;
+  final int? avatarId;
 
   UserEntity({
-     this.name,
-     this.email,
-     this.phone,
+    this.confirmPassword,
+    this.name,
+    this.email,
+    this.phone,
     this.password,
+    this.avatarId,
   });
 }

@@ -11,6 +11,8 @@ abstract class MoviesRemoteDataSource {
   Future<List<MovieModel>> searchMovies(String query);
 
   Future<MovieModel> getMovieDetails(int id);
+
+  Future<List<MovieModel>> getMostDownloadedMovies();
 }
 
 @LazySingleton(as: MoviesRemoteDataSource)
@@ -61,4 +63,19 @@ class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
     final data = response.data['data']['movie'];
     return MovieModel.fromJson(data);
   }
+
+  @override
+  Future<List<MovieModel>> getMostDownloadedMovies() async {
+    final response = await dio.get(
+      'https://yts.mx/api/v2/list_movies.json',
+      queryParameters: {
+        'sort_by': 'download_count',
+      },
+    );
+
+    final List data = response.data['data']['movies'];
+    return data.map((json) => MovieModel.fromJson(json)).toList();
+  }
+
+
 }
